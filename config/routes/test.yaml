@@ -1,0 +1,13 @@
+# test:
+# On retrouve les param (age) de la route dans les attributs de la request
+  # path: /test/{age<\d+>?0}
+  # controller: App\Controller\TestController::test 
+  #Par défaults l'âge dera de 0 
+  # defaults:
+  #   age: 0
+  # Ne peut contenir que un numérique plusieurs fois
+  # requirements:
+  #   age: \d+
+  # methods: [GET, POST]
+  # host: localhgost
+  # chemes: [https, http]
