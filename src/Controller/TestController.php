@@ -8,14 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TestController
 {
+    /**
+    *@Route("/", name="index")
+     */
     public function index()
     {
+
+
     dd("Hello !!!");
     
 }
 // Je demade a symfony de me passer une fonction $request (ou $toto) t dans celle-ci je veux recevoir un objet de la classe Request
+
+
 /**
- * @Route("/test/{age<\d+>?0}", name="test", methods={"GET", "POST"}, host="localhost", schemes={"http", "https"})
+ * @Route("/test/{age<\d+>?0}"), name="test", methods={"GET", "POST"}, host={"http" "https"}, schemes={"http", "https"}
  */
 public function test(Request $request, $age)
 { 
