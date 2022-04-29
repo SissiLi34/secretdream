@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+
+
+		{# syntaxe affiche #}
+		<h1>Hello
+			{{ prenom }}</h1>
+		<ul>
+        {# pour chaque age dans la variable age de helloController #}
+			{% for age in age %}
+				{% if age>= 18 %}
+					<li>adulte</li>
+				{% else %}
+					<li>enfant</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+
+{# inclure le fichier partial, faire la syntaxe dans le partial et définir quel objet je veux y mettre du controller #}
+{% include "_formateur.html.twig"  with {"formateur": formateur2} %}
+{% include "_formateur.html.twig"  with {"formateur": formateur3} %}
+
+        <h2> Les autres formateurs</h2>
+        <p>
+        <strong>{{ formateur2.prenom }}</strong> {{ formateur2.nom}} est agé de {{ formateur.age}} ans. </br>
+        </p>
+        Et
+        <strong>{{ formateur3.prenom}}</strong> {{ formateur3.nom}} qui lui est agé de {{ formateur3.age}} ans.
+        </p>
+
+		{# <p>Vous avez
+					{{ age }}
+					ans</p> #}
+
+
+	{# syntaxe fais ceci #}
+		{# {% if age >= 18 %}
+					Vous êtes un adulte
+				{% else %}
+					Vous êtes un enfant
+				{% endif %}
+				<ul> #}
+
+
+		{# pour chaque personne (variable créée) qui sont dans le tableau helloController des prénoms  #}
+		{# {% for personne in prenoms %} #}
+		{# affichage d'un filtre livré par twig #}
+
+		{# <li>
+		                
+		                {{ personne | upper }}</li>
+					{% endfor %}
+				</ul> #}
+
+
+		{# <ul> #}
+		{# boucle numérique qui va se déplacer de 1 à 10 et afficher les numéros #}
+		{# {% for i in 1..10 %}
+						<li>Numéro
+							{{ i }}</li>
+					{% endfor %}
+				</ul> #}
+{% endblock %}
